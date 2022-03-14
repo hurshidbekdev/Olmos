@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+<br>
+<br>
+<br>
+
+   <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="400">
+          {% for i in body %}
+          <div class="col-lg-4 col-md-2 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="{{i.rasm.url}}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <div class="portfolio-links">
+                  <a href="{{i.rasm.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+                <div>
+                  <h2>{{i.title}}</h2>
+                  <p><h4>{{i.haqida}}</h4></p>
+              </div>
+          </div>
+           {% endfor %}
+        </div>
+          </div>
+   </section>
+ <section id="portfolioT" class="portfolio">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>VIDEOLAR</h2>
+          <p><h4>olmos sport klubi sayti VIDEOLARI 3chi eatj</h4></p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-12 d-flex justify-content-center">
+          </div>
+        </div>
+
+        <div class="container">
+
+        <div class="row">
+          {% for video in videolar %}
+          <div class=" video col-xl-6 col-lg-6 col-md-12 col-sm-12">
+            <h2>{{video.title}}</h2>
+            <video controls class="img-fluid">
+              <source src="{{video.video.url}}" type="">
+            </video>
+          </div>
+          {% endfor %}
+        </div>
+        </div>
+
+      </div>
+
+    </section><!-- End Portfolio Section -->
+
+{% endblock %}

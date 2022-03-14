@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block base %}
+<br>
+<br>
+<br>
+<br>
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+          <h2>Fitness</h2>
+          <p><h4>3chi etaj</h4></p>
+        </div>
+
+            <div class="row">
+          {% for i in fit %}
+          <div class="col-lg-4 col-md-2 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="{{i.rasm.url}}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <div class="portfolio-links">
+                  <a href="{{i.rasm.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+                <div>
+                  <h2>{{i.title}}</h2>
+                  <p><h4>{{i.haqida}}</h4></p>
+              </div>
+          </div>
+           {% endfor %}
+         </div>
+        </div>
+
+{% endblock %}
